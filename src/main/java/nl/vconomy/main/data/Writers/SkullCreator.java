@@ -20,6 +20,7 @@ import java.util.UUID;
  *
  * @author Dean B on 12/28/2016.
  */
+@SuppressWarnings("deprecation")
 public class SkullCreator {
 
 	/**
@@ -129,6 +130,7 @@ public class SkullCreator {
 	 * @param base64 The base64 string containing the texture
 	 * @return The head with a custom texture
 	 */
+
 	public static ItemStack itemWithBase64(ItemStack item, String base64) {
 		notNull(item, "item");
 		notNull(base64, "base64");

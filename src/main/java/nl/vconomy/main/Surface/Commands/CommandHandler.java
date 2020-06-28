@@ -6,6 +6,7 @@ import nl.vconomy.main.data.Configuration.Config;
 import nl.vconomy.main.data.Models.enums.LogType;
 import nl.vconomy.main.data.Writers.Writer;
 
+@SuppressWarnings("unused")
 public class CommandHandler {
 
 	private Main main;

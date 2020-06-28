@@ -14,6 +14,7 @@ import nl.vconomy.main.data.Models.Wallet;
 import nl.vconomy.main.data.Models.enums.LogType;
 import nl.vconomy.main.data.Writers.Writer;
 
+@SuppressWarnings("unused")
 public class LoginListener implements Listener {
 	private Main main;
 	private Config cfg;
