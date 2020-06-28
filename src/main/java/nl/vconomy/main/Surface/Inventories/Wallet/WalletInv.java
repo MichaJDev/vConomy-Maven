@@ -11,6 +11,9 @@ import fr.mrmicky.fastinv.ItemBuilder;
 import net.md_5.bungee.api.ChatColor;
 import nl.vconomy.main.Main;
 import nl.vconomy.main.data.Configuration.Config;
+import nl.vconomy.main.data.Configuration.Databases.SkullDB;
+import nl.vconomy.main.data.Configuration.Databases.WalletDB;
+import nl.vconomy.main.data.Writers.SkullCreator;
 import nl.vconomy.main.data.Writers.Writer;
 
 public class WalletInv extends FastInv {
@@ -18,7 +21,7 @@ public class WalletInv extends FastInv {
 	private Main main;
 	private Config cfg;
 	private Writer writer;
-
+	private WalletDB wallet = cfg.getWalletDB();
 	private boolean preventClose = false;
 
 	public WalletInv(Main main) {
@@ -31,9 +34,10 @@ public class WalletInv extends FastInv {
 		setItem(34, new ItemBuilder(Material.BARRIER).name(ChatColor.RED + "Prevent close").build(), e -> {
 			preventClose = !preventClose;
 		});
+		ItemStack skull = SkullCreator.itemFromBase64(SkullDB.getSkull(0));
 
 		setCloseFilter(p -> preventClose);
-
+		this.addItem(skull);
 		this.main = main;
 		cfg = new Config(main);
 		writer = cfg.getWriter();
@@ -53,8 +57,6 @@ public class WalletInv extends FastInv {
 	public void onClick(InventoryClickEvent event) {
 		// do something
 	}
-	/// give @p minecraft:player_head{display:{Name:"{\"text\":\"Diamonds
-	/// Dollar\"}"},SkullOwner:{Id:[I;1981450220,-1940504086,-1791506151,459273445],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmYxYWM3MTgyZjkxZWZjYzI3NGQ2ZGQzODdlNzVkMjEyMjdmMWFkMGEwNmIwNzI1M2Q0M2NjYzlkZWEyOWZmIn19fQ=="}]}}}
-	/// 1
+
 
 }
