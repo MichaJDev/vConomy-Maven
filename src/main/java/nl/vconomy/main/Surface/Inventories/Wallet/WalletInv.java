@@ -16,11 +16,13 @@ import nl.vconomy.main.data.Configuration.Databases.WalletDB;
 import nl.vconomy.main.data.Writers.SkullCreator;
 import nl.vconomy.main.data.Writers.Writer;
 
+@SuppressWarnings("unused")
 public class WalletInv extends FastInv {
 
 	private Main main;
 	private Config cfg;
 	private Writer writer;
+
 	private WalletDB wallet = cfg.getWalletDB();
 	private boolean preventClose = false;
 
@@ -57,6 +59,5 @@ public class WalletInv extends FastInv {
 	public void onClick(InventoryClickEvent event) {
 		// do something
 	}
-
 
 }
