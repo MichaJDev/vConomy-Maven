@@ -1,34 +1,37 @@
 package nl.vconomy.main.data.Configuration.Databases;
 
+import nl.vconomy.main.Main;
+
 public class SkullDB {
 
+
 	public static String getSkull(int num) {
-		switch(num){
-			case 0:
-				return "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTg4ODI4YzFkMGFmMmQ4NjYwODRhYWY1Y2Y3Mjk2MTQwOGZjNTRjMThlMTVlZDQ1MjU5NTY5NzM2YjE5OSJ9fX0=";
-			case 1:
-				return "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWYzMDM0ZDI0YTg1ZGEzMWQ2NzkzMmMzM2U1ZjE4MjFlMjE5ZDVkY2Q5YzJiYTRmMjU1OWRmNDhkZWVhIn19fQ==";
-			case 2:
-				return "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2EyOGExMzUzODMzZjQwYTQyMWNhYmFhMzk2NWI5NzBhZDlmNjJjMWQ5NjJhY2E5ODQxNGQyZGVjNWMzMzgifX19";
-			case 3:
-				return "";
-			case 4:
-				return "";
-			case 5:
-				return "";
-			case 6:
-				return "";
-			case 7:
-				return "";
-			case 8:
-				return "";
-			case 9:
-				return "";
-			default:
-				break;
-			
+		switch (num) {
+		case 0:
+			return "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTg4ODI4YzFkMGFmMmQ4NjYwODRhYWY1Y2Y3Mjk2MTQwOGZjNTRjMThlMTVlZDQ1MjU5NTY5NzM2YjE5OSJ9fX0=";
+		case 1:
+			return "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWYzMDM0ZDI0YTg1ZGEzMWQ2NzkzMmMzM2U1ZjE4MjFlMjE5ZDVkY2Q5YzJiYTRmMjU1OWRmNDhkZWVhIn19fQ==";
+		case 2:
+			return "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2EyOGExMzUzODMzZjQwYTQyMWNhYmFhMzk2NWI5NzBhZDlmNjJjMWQ5NjJhY2E5ODQxNGQyZGVjNWMzMzgifX19";
+		case 3:
+			return "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTUxYzZkYTQ2Zjc1ODViZjJmZDVjYTQ0YzRhYmVjNTY4YzIzZWFmNjdjM2Y2ODFjZDJiYzFiM2ViMjc1YSJ9fX0=";
+		case 4:
+			return "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMGU5MzRjMGUwZTU2ZmI2NTkxY2E5OGQ3YzhhODNmZTM4Njg5OGNmNjRiZTMxNDMzMGJkODI3OGQ4MmEyIn19fQ==";
+		case 5:
+			return "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzQzNDNlZWIyM2QxOGVlMzdiYTZlZWRkOWRiMDYxYTQ3MDU3MzBlMzRkYzg1NTk2NDZmNzI5Zjk1ZTUwYTM3ZiJ9fX0=";
+		case 6:
+			return "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzJlNzFiOGY3ZTFiZjQ5ZDVkODkyZTQyMzYxYzlkNDA5M2NlZTY0MTM5NTJlNmE0ZGI2NDY0ZmY3OGFlZTgifX19";
+		case 7:
+			return "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDhhM2M1YjEyMmRmZjkzNjM2YmRiY2Q2NjY5YjU5Y2RhM2ZjZmFlOTM1Y2U3NjE1YTI3ZTVkYWIxN2M3NTU2MSJ9fX0=";
+		case 8:
+			return "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODU5ODM4MjM3Zjg4OWY1YmNhYWYyNmM3NTZmNjRlODE2YTEzNTBjM2M1NGFhN2EwZjcyODM5MjI2NTkwOGUzNSJ9fX0=";
+		case 9:
+			return "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmFjM2E5NDk1NzUzMmYyODA3NjExYWMzMjViY2RlZTRlNGQ3Y2I0YTIyMTIyZTQyMDgwNmNlNmIwZDdjM2MxIn19fQ==";
+		default:
+			break;
+
 		}
 		return null;
 	}
-	
+
 }

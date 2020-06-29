@@ -10,9 +10,11 @@ import nl.vconomy.main.Main;
 import nl.vconomy.main.Bussines.Checks.AmountChecker;
 import nl.vconomy.main.Surface.Inventories.Inventories;
 import nl.vconomy.main.data.Configuration.Config;
+import nl.vconomy.main.data.Configuration.Databases.SkullDB;
 import nl.vconomy.main.data.Configuration.Databases.WalletDB;
 import nl.vconomy.main.data.Models.Wallet;
 import nl.vconomy.main.data.Models.enums.LogType;
+import nl.vconomy.main.data.Writers.SkullCreator;
 import nl.vconomy.main.data.Writers.Writer;
 
 @SuppressWarnings("unused")
@@ -44,6 +46,11 @@ public class WalletCmd implements CommandExecutor {
 					if (s.hasPermission("vConomy.wallet")) {
 
 						inv.getWalletInv().open(p);
+						String amount = String.valueOf(wallet.GetWallet(p).getAmount());
+						char[] digits = amount.toCharArray();
+						for (char Char : digits) {
+							inv.getWalletInv().addItem(SkullCreator.itemFromBase64(SkullDB.getSkull(Char)));
+						}
 						// inv.getWalletInv().addItem(ItemOne);
 					}
 				} else if (args.length == 1) {
@@ -51,7 +58,12 @@ public class WalletCmd implements CommandExecutor {
 						p.sendMessage(ChatColor.translateAlternateColorCodes('&',
 								"&cCannot use pay like that: /wallet pay <player> <amount>"));
 					}
-				} else if (args.length > 1) {
+				} else if (args.length < 1) {
+					if (args[0].equalsIgnoreCase("pay")) {
+						p.sendMessage(ChatColor.translateAlternateColorCodes('&',
+								"&cCannot use pay like that: /wallet pay <player> <amount>"));
+					}
+				} else if (args.length > 2) {
 					if (args[0].equalsIgnoreCase("pay")) {
 						if (!args[1].isEmpty() || AmountChecker.isInteger(args[1])) {
 							Player tp = main.getServer().getPlayer(args[1]);
