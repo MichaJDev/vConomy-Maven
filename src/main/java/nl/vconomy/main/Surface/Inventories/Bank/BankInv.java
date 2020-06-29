@@ -1,33 +1,28 @@
-package nl.vconomy.main.Surface.Inventories.Wallet;
+package nl.vconomy.main.Surface.Inventories.Bank;
 
 import org.bukkit.Material;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.event.inventory.InventoryOpenEvent;
-import org.bukkit.inventory.ItemStack;
 
 import fr.mrmicky.fastinv.FastInv;
 import fr.mrmicky.fastinv.ItemBuilder;
 import net.md_5.bungee.api.ChatColor;
 import nl.vconomy.main.Main;
 import nl.vconomy.main.data.Configuration.Config;
-import nl.vconomy.main.data.Configuration.Databases.SkullDB;
 import nl.vconomy.main.data.Configuration.Databases.WalletDB;
-import nl.vconomy.main.data.Writers.SkullCreator;
 import nl.vconomy.main.data.Writers.Writer;
 
-@SuppressWarnings("unused")
-public class WalletInv extends FastInv {
+public class BankInv extends FastInv {
 
 	private Main main;
 	private Config cfg;
 	private Writer writer;
 
-	private WalletDB wallet = cfg.getWalletDB();
 	private boolean preventClose = false;
 
-	public WalletInv(Main main) {
-		super(45, ChatColor.GREEN + "Wallet");
+	public BankInv(Main main) {
+		super(45, ChatColor.GOLD + "Bank");
 
 		setItems(getBorders(), new ItemBuilder(Material.LAPIS_BLOCK).name(" ").build());
 

@@ -45,12 +45,12 @@ public class WalletCmd implements CommandExecutor {
 				if (args.length == 0) {
 					if (s.hasPermission("vConomy.wallet")) {
 
-						inv.getWalletInv().open(p);
 						String amount = String.valueOf(wallet.GetWallet(p).getAmount());
 						char[] digits = amount.toCharArray();
 						for (char Char : digits) {
 							inv.getWalletInv().addItem(SkullCreator.itemFromBase64(SkullDB.getSkull(Char)));
 						}
+						inv.getWalletInv().open(p);
 						// inv.getWalletInv().addItem(ItemOne);
 					}
 				} else if (args.length == 1) {
